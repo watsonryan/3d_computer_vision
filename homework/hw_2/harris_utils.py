@@ -112,7 +112,11 @@ class harris_utils():
         It will import the specified image, run the harris corner detector, saves a new image with the corners marked.
         '''
 
-        self.image = Image.open(self.img_path)
+        try:
+            self.image = Image.open(self.img_path)
+        except:
+            print '\n\n Oops! You need to provide an input image.  Try again... \n\n'
+            exit()
         self.img_width, self.img_height = self.image.size
         self.img_arr = np.array(self.image)
         self.gray_scale = np.array(self.image.convert('L'))
