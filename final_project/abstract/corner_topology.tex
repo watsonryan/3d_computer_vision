@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+\title{Topological Analysis of Corner Features in Images}
+\author{Jacob Hikes and Ryan Watson}
+
+\begin{document}
+
+\begin{titlepage}
+\clearpage\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\begin{abstract}
+
+	The ability to robustly extract corner features from images is of paramount importance in modern image processing. This low-level step is integral in the image processing chain that enables more complex tasks, such as: visual odomotery, structure-from-motion (SFM), and simulations localization and mapping (SLAM). Due to the importance of robust corner extraction, considerable research has been dedicated to the field. Although this research has made considerable advances with respect to making corner extraction invariant to scale, rotation and noise, there is still no single methodology that is invariant to all three. 
+	
+	For the methodology proposed within this paper, it is assumed that the above mentioned image corrupting sources (i.e., sensor noise) can be classified as smooth, continuous transformations on the underlying data set. With the notion that our data is corrupted by a smooth and continuous transformation, we can apply a plethora of tools from algebraic topology to study the underlying structure of the set. This paper will explore the applicability of current topological techniques for corner extraction in images. Particularly, we plan to build upon the work developed within Carlsson et al. \footnote{Carlsson, Gunnar, et al. "On the local behavior of spaces of natural images." International Journal of Computer Vision 76.1 (2018): pp. 1-12.} to evaluate the persistent homology of 3x3 patches within the images specifically for corner detection. It is believed that the patches corresponding to corner segments will be confined to a specific volume of the 9-Dimension space. The proposed methodology is similar to the FAST \footnote{Rosten et al. "Machine learning for high speed corner detection," in 9th European Conference on Computer Vision Vol. 1, 2006, pp.430-443} approach; however, the utilization of persistent homology should make the proposed technique considerable less sensitive to sensor noise.
+	
+	To evaluate the proposed method, the  ``Image Database and Corner Detection'' \footnote{$http://users.monash.edu/au/~mawrangi/Corner_{}detection_{}dataset.zip$} will be utilized. This dataset will provide a benchmark set of images that can be rotated, scaled and corrupted by additive Gaussian anoise. With the image dataset, the repeatability and localization error of the proposed method along with several other commonly used methods (e.g., FAST  and SUSAN \footnote{Smith et al. "SUSAN- a new aproach to low leverl image processing" Internation Journal of Computer Vision Vol. 23 pp. 45-78}) will be evaluated. 
+	
+\end{abstract}
+
+\end{document}
